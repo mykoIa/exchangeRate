@@ -1,11 +1,11 @@
-Currency exchange REST API
+# Currency exchange REST API
 
 On a regular basis, the API loads data from resources into the internal database using cron job
 
 The API responds in json format. In the file "application.properties" you can specify the frequency with which 
 requests will be made, the currency against which the exchange is made, the list of currencies to be exchanged.
 
-This API has 2 methods:
+### This API has 2 methods:
 
 * Request a list of rates for all sources with average market rates.
 
