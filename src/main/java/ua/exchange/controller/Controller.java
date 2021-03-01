@@ -22,6 +22,8 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/exchangeRate")
 public class Controller {
+    
+    public static final Logger LOG = LoggerFactory.getLogger(Controller.class);
 
     @Autowired
     private DataBaseService dbService;
@@ -37,7 +39,7 @@ public class Controller {
         }
         List<ExchangeModel> exchangeRateList = dbService.findLastEntry(
                 currency.get().getCurrencyCode(), ParseCurrencyUtil.parseCurrencies(currencies));
-        System.out.println(exchangeRateList);
+        LOG.warn(exchangeRateList);
         return new CurrenciesRateListWithAverages(exchangeRateList);
     }
 
